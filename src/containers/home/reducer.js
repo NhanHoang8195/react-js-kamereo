@@ -1,26 +1,28 @@
 import { Map } from 'immutable';
-import {
-  GET_LIST_USER_START,
-  GET_LIST_USER_SUCCESS,
-  GET_LIST_USER_FAILURE,
-} from './type';
+import * as EVENT from './type';
 
 const initialState = Map({
-  data: null,
+  data: undefined,
   isLoadingData: false,
-  error: null,
+  isUpdatingProfile: false,
+  updateProfileError: false,
 });
 const handlerMaps = {};
 
-handlerMaps[GET_LIST_USER_START] = (state) => {
-  return state.set('isLoadingData', true);
-};
-handlerMaps[GET_LIST_USER_SUCCESS] = (state, action) => {
-  return state.set('isLoadingData', false).set('data', action.payload);
-};
-handlerMaps[GET_LIST_USER_FAILURE] = (state, action) => {
-  return state.set('isLoadingData', false).set('error', action.error);
-};
+handlerMaps[EVENT.GET_STORE_INFOMATION_START] = (state) => state
+  .set('isLoadingData', true);
+handlerMaps[EVENT.GET_STORE_INFOMATION_SUCCESS] = (state, action) => state
+  .set('isLoadingData', false).set('data', action.payload);
+handlerMaps[EVENT.GET_STORE_INFOMATION_FALURE] = (state, error) => state
+  .set('isLoadingData', false).set('error', error);
+
+handlerMaps[EVENT.UPDATE_PROFILE_START] = (state) => state
+  .set('isUpdatingProfile', true);
+handlerMaps[EVENT.UPDATE_PROFILE_SUCCESS] = (state, action) => state
+  .set('isUpdatingProfile', false).set('data', action.payload);
+handlerMaps[EVENT.UPDATE_PROFILE_FAILURE] = (state) => state
+  .set('isUpdatingProfile', false)
+  .set('updateProfileError', true);
 
 export default (state = initialState, action) => {
   const fn = handlerMaps[action.type];

@@ -1,0 +1,11 @@
+.kamereo-select {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
+  height: 40px;
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "store-1",
+  "logoUrl": "https://lh3.googleusercontent.com/DTaZtC7R_yjYJk7U8cdjSIjgb0pKTwFKrMiRZyXr6t11ljezXxuqczg2JnDwXjhiybw",
+  "name": "K.O.I Thé",
+  "address": "521 Hồ Tùng Mậu",
+  "district": "Q1",
+  "city": "HCM",
+  "phone": "(338) 886-9944",
+  "redInvoice": {
+    "name": "K.O.I Thé International Company",
+    "address": "9682 Wakehurst Avenue Arlington Heights, IL 60004",
+    "district": "Q1",
+    "city": "HCM",
+    "taxCode": "P77744944"
+  }
+}

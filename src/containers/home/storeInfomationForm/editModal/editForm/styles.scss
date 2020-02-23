@@ -1,0 +1,30 @@
+.kamereo-edit-form {
+  .kamereo-field {
+    .kamereo-input {
+      width: 100%;
+    }
+  }
+  .kamereo-address {
+    .address-fields {
+      display: flex;
+      justify-content: space-between;
+      .kamereo-input {
+        width: 45%;
+      }
+      .kamereo-select {
+        width: 25%;
+      }
+    }
+  }
+  .edit-form-footer {
+    .kamereo-btn {
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 10px;
+    }
+    .cancel-btn {
+      background-color: unset;
+    }
+  }
+}
+

@@ -1,0 +1,1 @@
+export const PHONE_NUMBER_PATTERN = /^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$/;

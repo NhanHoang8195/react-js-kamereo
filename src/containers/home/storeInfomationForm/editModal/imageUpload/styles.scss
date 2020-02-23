@@ -1,0 +1,21 @@
+.kamereo-image-upload {
+  .image-upload-file {
+    display: none;
+  }
+  .upload-img-footer {
+    text-align: center;
+    .kamereo-btn {
+      font-weight: 600;
+      background-color: unset;
+      padding: 10px;
+    }
+    .kamereo-label {
+      font-weight: 600;
+      background-color: #e4f8f6;
+      padding: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

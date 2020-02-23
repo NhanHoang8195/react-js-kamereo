@@ -1,0 +1,12 @@
+.kamereo-btn {
+  padding: 5px;
+  border: none;
+  background-color: #d6f8f5;
+  border-radius: 2px;
+  &:focus, &:active {
+    outline: none;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

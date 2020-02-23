@@ -1,0 +1,14 @@
+.kamereo-field {
+  margin: 5px 0;
+  .kamero-phone-number {
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    color: black;
+    border-radius: 2px;
+  }
+  .field-error-message {
+    color: #dc3545;
+    font-weight: 600;
+  }
+}

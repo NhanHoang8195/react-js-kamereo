@@ -1,9 +1,5 @@
-import {
-  GET_LIST_USER_START,
-  GET_LIST_USER_SUCCESS,
-  GET_LIST_USER_FAILURE,
-} from './type';
-import { REQUEST_METHODS, API_URL, request } from '../../api';
+import * as EVENT from './type';
+import storeInfor_mock from '../../mockData/store_infomation.json';
 
 /**
  * Handle action get data successfully.
@@ -34,19 +30,31 @@ function handleFailure(type, error) {
  * ActionCreators that return a function.
  * @returns {Function} the function that will be implement by redux-thunk.
  */
-export function getListUser() {
+export function getStoreInfomation() {
   return (dispatch) => {
-    const options = {
-      url: API_URL.LIST_USER_URL,
-      method: REQUEST_METHODS.GET,
-    };
-    dispatch({ type: GET_LIST_USER_START });
-    request.doRequest(options)
-      .then(data => {
-        dispatch(handleSuccess(GET_LIST_USER_SUCCESS, data));
-      })
-      .catch(error => {
-        dispatch(handleFailure(GET_LIST_USER_FAILURE, error));
-      });
+    dispatch({ type: EVENT.GET_STORE_INFOMATION_START });
+    setTimeout(() => {
+      dispatch(handleSuccess(EVENT.GET_STORE_INFOMATION_SUCCESS, storeInfor_mock));
+    }, 500);
   };
+}
+
+export function onUploadImage(img) {
+  return (dispatch) => {
+    dispatch({ type: EVENT.UPLOAD_IMAGE_START });
+    dispatch(handleSuccess(EVENT.UPLOAD_IMAGE_SUCCESS, img));
+    return Promise.resolve(img);
+  };
+}
+
+export function onUpdateProfile(data, error) {
+  return (dispatch) => {
+    dispatch({ type: EVENT.UPDATE_PROFILE_START });
+    if (error) {
+      dispatch(handleFailure(EVENT.UPDATE_PROFILE_FAILURE, { error: true }));
+    } else {
+      dispatch(handleSuccess(EVENT.UPDATE_PROFILE_SUCCESS, data));
+    }
+    return Promise.resolve();
+  }
 }

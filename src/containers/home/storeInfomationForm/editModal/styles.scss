@@ -1,0 +1,22 @@
+.karameo-modal {
+  .karameo-modal-dialog {
+    .message-text {
+      padding: 20px;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+    .error-message {
+      border: 1px solid #dc3545;
+      color: #dc3545;
+    }
+    .success-message {
+      border: 1px solid #218838;
+      color: #218838;
+    }
+    .basic-info-title, .red-invoice-title, .store-image-title {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+  }
+}
